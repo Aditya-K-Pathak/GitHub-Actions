@@ -1,0 +1,14 @@
+name: Test App
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: setup nodejs
+        uses: actions/setup-node@v4.3.0
+      - name: get repository
+        uses: actions/checkout@V3
+      - name: install dependencies
+        run: npm ci
+      - name: run tests
+        run: npm test
